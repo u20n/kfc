@@ -18,7 +18,7 @@ install: all
 uninstall:
 	rm -f $(DESTDIR)$(BINDIR)/kfc
 	rm -rf $(DESTDIR)/usr/share/kfc
-	rm -rf $(DESTDIR)$(MANPREFIX)/man1/kfc.1
+	rm -f $(DESTDIR)$(MANPREFIX)/man1/kfc.1
 
 clean:
 	rm -f kfc *.o
