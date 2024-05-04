@@ -1,0 +1,67 @@
+.TH KFC 1
+.sp
+.SH NAME
+kfc \- KISS for colors, a terminal-emulator color palette setter written in POSIX C99.
+.sp
+.SH SYNOPSIS
+.B kfc
+[\fB-L\fP] [\fB-r\fP|\fB-s\fP \fIpalette\fP] [\fB-l\fP|\fB-p\fP|\fB-v\fP]
+.sp
+.SH OPTIONS
+.TP
+.BR \-L
+Set light themes (modifier for \fB-s\fP/\fB-r\fP/\fB-l\fP)
+.sp
+.TP
+.BR \-r
+Select a random palette (dark theme by default)
+.sp
+.TP
+.BI "\-s " palette
+Select
+.IR palette
+(dark theme by default)
+.sp
+.TP
+.BR \-l
+List palettes (dark themes by default)
+.sp
+.TP
+.BR \-p
+Print current palette
+.sp
+.TP
+.BR \-v
+Show version information
+.sp
+.SH EXAMPLES
+.sp
+For the following examples, remember to replace PALETTE with your preferred color schema name.
+.sp
+To see if a specific light color palette is available:
+.sp
+.RS
+kfc \fB-lL\fP | grep PALETTE
+.RE
+.sp
+To apply the light version of the PALETTE:
+.sp
+.RS
+kfc \fB-Ls\fP PALETTE
+.RE
+.sp
+To verify that the palette was applied (or see the last palette that was applied):
+.sp
+.RS
+kfc \fB-p\fP
+.RE
+.sp
+To apply a color palette automatically to a new terminal window, you can add the following line to one of your system startup files (e.g ~/.profile, ~/.ashrc or ~/.bashrc):
+.sp
+.RS
+[ -x "$(command -v kfc)" ] && kfc \fB-s\fP PALETTE
+.RE
+.sp
+.SH BUGS
+Please report all bugs to
+.RI < https://github.com/mcpcpc/kfc >
